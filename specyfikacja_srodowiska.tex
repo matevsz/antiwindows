@@ -1,0 +1,76 @@
+﻿\section{Specyfikacja środowiska zadaniowego}
+\subsection{Definicja zadań}
+%Do głównych zadań agenta należy: … Ponadto agent ma za zadanie…
+Głównym zadaniem agenta jest zaplanowanie świadczenia usług klientom w czasie na przestrzeni tygodnia. W procesie planowania każdemu klientowi przysługujących mu usług, przydzielone zostają na poczet ich realizacji konieczne do tego zasoby firmy: pracownicy, miejsca, sprzęt i czas. W procesie planowania muszą być uwzględnione następujące ograniczenia:
+\begin{enumerate}
+	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu (patrz \ref{sssec:miejsca})}
+	\item{dostępność przenośnego sprzętu (patrz \ref{sssec:sprzet})}
+	\item{uprawnienia, dyspozycyjność i preferencje personelu (patrz \ref{sssec:personel})}
+	\item{dyspozycyjność i preferencje klientów (patrz \ref{sssec:klienci})}
+	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
+\end{enumerate}
+
+\subsection{Określenie miary wyników działania}
+Podstawowym kryterium oceny sukcesu agenta jest … Dodatkowe istotne kryteria to …
+
+\subsection{Istotne składowe środowiska}
+%Projektowany typ agenta ma działać w środowisku …  Istotne znaczenie  dla jego funkcjonowania mają następujące aspekty środowiska: …  
+
+\subsubsection{Usługi}\label{sssec:uslugi}
+Każda ze świadczonych przez firmę usług charakteryzuje się:
+\begin{itemize}
+	\item{uprawnieniami wymaganymi od personelu}
+	\item{wymaganym wyposażeniem miejsca, w którym jest świadczona}
+	\item{wymaganym dodatkowym przenośnym sprzętem}
+	\item{ilością osób, które mogą odbierać ją jednocześnie}
+\end{itemize}
+Ten sam rodzaj usługi może przysługiwać różnym klientom w różnej ilości (czasie trwania), ilość jest zadawana tygodniowo, przy czym istnieje ilość domyślna.
+Tygodniowy czas trwania usługi może być dzielony na sesje. Domyślnym podziałem tygodniowego czasu \( T_w \) na \( x \) sesji jest podział "po równo"\ \( T_w/x \), przy czym konieczne jest umożliwienie ręcznej ingerencji w ten podział.
+Dwie sesje jednej usługi dla jednego klienta domyślnie nie mogą być planowane jednego dnia, ale wskazane jest umożliwienie takiego zachowania agenta w szczególnych przypadkach.
+Wszystkie sesje jednej usługi dla jednego klienta domyślnie prowadzone są przez tego samego pracownika personelu. Wskazane jest umożliwienie zaplanowania różnych pracowników dla różnych sesji tej samej usługi dla jednego klienta w szczególnych przypadkach.
+
+\subsubsection{Klienci}\label{sssec:klienci}
+Każdy z klientów charakteryzuje się:
+\begin{itemize}
+	\item{czasem, w którym jest gotowy odbierać usługi (dyspozycyjność)}
+	\item{preferencjami dotyczącymi czasu odbierania usług w ramach swojej dyspozycyjności}
+	\item{zestawem (zbiorem) przysługujących mu usług}
+	\item{przynależnością do 0 lub więcej grup}
+\end{itemize}
+Gdy klientowi przysługuje usługa, która jest świadczona w okresie dłuższym, niż okres harmonogramowania\footnote{np. kurs programowania trwający 4 semestry, gdy planowany jest 1 semestr}, należy umożliwić wymuszenie przyporządkowania temu klientowi do świadczenia tej usługi konkretnego pracownika personelu. 
+Grupie klientów przysługują usługi tak, jakby ta grupa była jednym klientem. Planując świadczenie usług grupowych agent powinien brać pod uwagę dyspozycyjność i preferencje wszystkich klientów należących do grupy.
+
+\subsubsection{Personel}\label{sssec:personel}
+Każdy z pracowników personelu charakteryzuje się:
+\begin{itemize}
+	\item{uprawnieniami do świadczenia konkretnych rodzajów usług}
+	\item{dyspozycyjnością, tzn. o jakich porach dnia/tygodnia jest gotów świadczyć usługi}
+	\item{preferencjami dotyczącymi czasu w ramach swojej dyspozycyjności}
+\end{itemize}
+Pracownik personelu może być przyporządkowany konkretnemu klientowi do świadczenia konkretnej usługi, gdy np. okres harmonogramowania jest krótszy niż okres świadczenia danej usługi danemu klientowi (patrz \ref{sssec:klienci}).
+Gdy pracownik personelu jednorazowo nie może prowadzić sesji jakiejś usługi, musi istnieć możliwość automatycznego zaplanowania terminu odrobienia danej sesji w innym terminie, z uwzględnieniem dyspozycyjności i preferencji poszkodowanych klientów i danego pracownika.
+
+\subsubsection{Miejsca}\label{sssec:miejsca}
+Firma dysponuje miejscami (np. salami), w których świadczone mogą być usługi. Cechy, które posiadają miejsca, a które muszą zostać uwzględnione przy harmonogramowaniu:
+\begin{itemize}
+	\item{pojemność, tzn. ile osób jednocześnie może korzystać z usługi w danym miejscu}
+	\item{wyposażenie, tzn. jaki sprzęt znajduje się na stałe w danym miejscu}
+	\item{dostępność, tzn. o jakich porach dnia/tygodnia, jednorazowo lub okresowo, miejsce jest dostępne (nie jest wyłączone z użytkowania)}
+\end{itemize}
+Miejsca mogą być od siebie odległe na tyle, że konieczne jest uwzględnienie czasu potrzebnego do przemieszczania się pomiędzy nimi.
+Gdy miejsce zostaje wyłączone z użytkowania (w skutek np. zdarzenia losowego) musi być możliwość automatycznego harmonogramowania usług w innych miejscach.
+
+\subsubsection{Sprzęt}\label{sssec:sprzet}
+Firma dysponuje ruchomym sprzętem, który charakteryzuje się:
+\begin{itemize}
+	\item{typem}
+	\item{określoną ilością danego typu}
+\end{itemize}
+Każdy egzemplarz (określonego typu, wliczony w ilość danego typu) może być używany w celu świadczenia jakiejś usługi każdorazowo lub jednorazowo.
+Sprzęt nie jest stałym wyposażeniem konkretnego miejsca i może być przenoszony.
+
+\subsection{Dostępne/potrzebne efektory}
+Do realizacji postawionych przed agentem zadań potrzebuje on …
+
+\subsection{Dostępne/potrzebne sensory}
+Do właściwego postrzegania środowiska agent musi być wyposażony w następujące sensory: …

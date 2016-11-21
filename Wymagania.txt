@@ -1,0 +1,66 @@
+System bêdzie harmonogramowa³ œwiadczenie us³ug klientom z uwzglêdnieniem nastêpuj¹cych kryteriów:
+1. Ze strony firmy
+	a) personel, jego dyspozycyjnoœæ i preferencje
+	b) miejsce, jego dostêpnoœæ i wyposa¿enie
+	c) sprzêt, jego dostêpnoœæ
+2. Ze strony klientów
+	- dyspozycyjnoœæ i preferencje
+3. Rodzaj us³ugi
+	- kwalifikacje personelu
+	- zapotrzebowanie na miejsce
+	- zapotrzebowanie na sprzêt
+
+===
+
+AD 1
+
+a)
+Firma dysponuje personelem, który œwiadczy us³ugi. Ka¿dego cz³onka personelu charakteryzuje:
+- uprawnienia, tzn. jaki rodzaj us³ugi mo¿e œwiadczyæ
+- dyspozycyjnoœæ, tzn. o jakich porach dnia/tygodnia jest gotowy œwiadczyæ us³ugi
+- preferencje, tzn. jakie pory dnia/tygodnia preferuje w ramach swojej dyspozycyjnoœci
+- ze wzglêdu na ci¹g³oœæ œwiadczenia us³ugi (np. gdy us³uga jest œwiadczona d³u¿ej ni¿ wynosi jednokrotny okres harmonogramowania) dany cz³onek personelu mo¿e byæ przypisany jako stale œwiadcz¹cy konkretny rodzaj us³ugi konkretnemu klientowi/grupie
+Gdy cz³onek personelu nie mo¿e jednorazowo œwiadczyæ us³ugi musi byæ mo¿liwoœæ automatycznego harmonogramowania terminu "odrobienia" z uwzglêdnieniem dyspozycyjnoœci i preferencji klienta i cz³onka personelu, dostêpnoœci miejsca i sprzêtu.
+
+b)
+Firma dysponuje miejscami (np. salami), w których œwiadczone mog¹ byæ us³ugi. Cechy, które posiadaj¹ miejsca, a które musz¹ zostaæ uwzglêdnione przy harmonogramowaniu:
+- pojemnoœæ, tzn. ile osób jednoczeœnie mo¿e korzystaæ z us³ugi jednoczeœnie
+- wyposa¿enie, tzn. jaki sprzêt znajduje siê na sta³e w danym miejscu
+- dostêpnoœæ, tzn. o jakich porach dnia/tygodnia, jednorazowo lub okresowo miejsce jest dostêpne (nie jest wy³¹czone z u¿ytkowania)
+Miejsca mog¹ byæ od siebie odleg³e na tyle, ¿e konieczne jest uwzglêdnienie czasu potrzebnego do przemieszczania siê pomiêdzy nimi.
+Gdy miejsce zostaje wy³¹czone z u¿ytkowania (w skutek np. zdarzenia losowego) musi byæ mo¿liwoœæ automatycznego harmonogramowania us³ug w innych miejscach.
+
+c)
+Firma dysponuje ruchomym sprzêtem, który charakteryzuje siê:
+- typem
+- okreœlon¹ iloœci¹ danego typu
+Ka¿dy egzemplarz (okreœlonego typu, wliczony w iloœæ danego typu) mo¿e byæ u¿ywany w celu œwiadczenia us³ugi ka¿dorazowo lub jednorazowo.
+Sprzêt nie jest sta³ym wyposa¿eniem konkretnego miejsca i mo¿e byæ przenoszony.
+
+===
+
+AD 2
+
+Klient okreœla czas, w jakim jest gotowy odbieraæ us³ugi, a w ramach tego czasu preferencje.
+Klient mo¿e odbieraæ kilka rodzajów us³ug w tym samym okresie harmonogramowania.
+Klient mo¿e byæ przypisany do konkretnego cz³onka personelu jako œwiadcz¹cemu jemu okreœlony rodzaj us³ugi (w zwi¹zku z np. d³u¿szym czasem œwiadczenia us³ugi ni¿ wynosi okres harmonogramowania).
+Klienci mog¹ byæ po³¹czeni w grupy, wtedy odbieraj¹ dany rodzaj us³ugi jednoczeœnie, tak jakby byli jednym klientem. Nale¿y wtedy uwzglêdniaæ - oprócz dyspozycyjnoœci i preferencji ka¿dego klienta - dodatkowo wielkoœæ grupy (w kontekœcie miejsca i iloœci sprzêtu). Po³¹czenie klientów w grupê jest zadane (nie jest automatyczne).
+
+===
+
+AD 3
+
+Firma œwiadczy klientom ró¿ne rodzaje us³ug. Us³ugi posiadaj¹ cechy:
+- œwiadczona indywidualnie lub grupowo
+- wymagane uprawnienia
+- miejsce (wielkoœæ, wyposa¿enie)
+- sprzêt (typ, iloœæ {1..dla ka¿dego z grupy})
+Ka¿dy klient/grupa mo¿e otrzymywaæ us³ugê w innej iloœci (czas trwania), przy czym istnieje iloœæ domyœlna.
+Czas trwania us³ugi zadawany jest tygodniowo. W ramach tygodnia czas trwania mo¿e byæ podzielony na kilka sesji. Nale¿y umo¿liwiæ kontrolê nad d³ugoœci¹ ka¿dej z sesji, przy czym domyœlny podzia³ jest podzia³em "po równo". Nale¿y uwzglêdniæ koniecznoœæ harmonogramowania poszczególnych sesji w ró¿ne dni tygodnia - musi byæ mo¿liwoœæ zadania, czy sesje danej us³ugi mog¹ lub nie mog¹ zostaæ zaplanowane jednego dnia (np. po sobie). Musi byæ mo¿liwoœæ okreœlenia, czy ró¿ne sesje tej samej us³ugi dla tego samego klienta/grupy mog¹ byæ œwiadczone przez ró¿nych cz³onków personelu.
+
+****************************************
+Uwagi:
+
+- próg liczebnoœci grupy, dla której dana us³uga mo¿e byæ zrealizowana
+- próg liczebnoœci grupy w danym momencie (jeœli z grupy 30 osobowej przyjdzie np tylko jedna osoba)
+- sposób odrabiania zajêæ tylko dla czêœci grupy.
