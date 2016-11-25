@@ -1,5 +1,5 @@
 ﻿\section{Specyfikacja środowiska zadaniowego}
-\subsection{Definicja zadań}
+\subsection{Definicja zadań}\label{ssec:zadania}
 %Do głównych zadań agenta należy: … Ponadto agent ma za zadanie…
 Głównym zadaniem agenta jest zaplanowanie świadczenia usług klientom w czasie na przestrzeni tygodnia. W procesie planowania każdemu klientowi przysługujących mu usług, przydzielone zostają na poczet ich realizacji konieczne do tego zasoby firmy: pracownicy, miejsca, sprzęt i czas. W procesie planowania muszą być uwzględnione następujące ograniczenia:
 \begin{enumerate}
@@ -11,7 +11,12 @@ Głównym zadaniem agenta jest zaplanowanie świadczenia usług klientom w czasi
 \end{enumerate}
 
 \subsection{Określenie miary wyników działania}
-Podstawowym kryterium oceny sukcesu agenta jest … Dodatkowe istotne kryteria to …
+%Podstawowym kryterium oceny sukcesu agenta jest … Dodatkowe istotne kryteria to …
+Podstawowym kryterium oceny sukcesu agenta jest zaplanowanie wszystkim klientom wszystkich przysługujących im usług w sposób umożliwiający realne wykonanie planu dysponując zadanymi zasobami (personelem, miejscem, sprzętem).
+Jeżeli nie istnieje taki plan, użytkownik powinien zostać poinformowany o przyczynie, którą może być zbyt mała liczba pracowników personelu, lub zbyt mała liczba miejsc do świadczenia usług, lub zbyt mała ilość przenośnego sprzętu.
+
+Dodatkowym kryterium oceny efektu pracy agenta jest jakość planu. Za idealny plan uważa się taki, który skutecznie bierze pod uwagę \emph{wszystkie} zadane przez klientów i pracowników preferencje w ramach ich dyspozycyjności,
+oraz w którym dla każdej osoby (klienta i pracownika) jednego dnia nie występują przerwy (potocznie "okienka") większe, niż to konieczne\footnote{konieczne dłuższe przerwy występują głównie w sytuacji, w której klient lub pracownik muszą przemieścić się pomiędzy oddalonymi od siebie miejscami}.
 
 \subsection{Istotne składowe środowiska}
 %Projektowany typ agenta ma działać w środowisku …  Istotne znaczenie  dla jego funkcjonowania mają następujące aspekty środowiska: …  
@@ -70,7 +75,10 @@ Każdy egzemplarz (określonego typu, wliczony w ilość danego typu) może być
 Sprzęt nie jest stałym wyposażeniem konkretnego miejsca i może być przenoszony.
 
 \subsection{Dostępne/potrzebne efektory}
-Do realizacji postawionych przed agentem zadań potrzebuje on …
+%Do realizacji postawionych przed agentem zadań potrzebuje on …
+Ponieważ wynikiem działania agenta jest harmonogram, plan zagospodarowania czasu klientów, pracowników, miejsc i sprzętu, efektorem potrzebnym do prawidłowego działania jest funkcja utrwalająca wynik pracy agenta. Za najbardziej pożądany sposób utrwalenia uznaje się zapis na dysk.
 
 \subsection{Dostępne/potrzebne sensory}
-Do właściwego postrzegania środowiska agent musi być wyposażony w następujące sensory: …
+%Do właściwego postrzegania środowiska agent musi być wyposażony w następujące sensory: …
+Ponieważ środowisko, w jakim pracuje agent, jest czysto wirtualne, do właściwego wykonania swojego zadania potrzebuje on być w stanie odczytać warunki początkowe zadania. Na warunki początkowe zadania składają się elementy wymienione w punkcie \ref{ssec:zadania}.
+
