@@ -1,22 +1,49 @@
 ﻿\section{Specyfikacja środowiska zadaniowego}
-\subsection{Definicja zadań}\label{ssec:zadania}
+\subsection{Definicja zadań agenta centralnego}\label{ssec:zadaniaCentralny}
 %Do głównych zadań agenta należy: Ponadto agent ma za zadanie
-Głównym zadaniem agenta jest zaplanowanie świadczenia usług klientom w czasie na przestrzeni tygodnia. W procesie planowania każdemu klientowi przysługujących mu usług, przydzielone zostają na poczet ich realizacji konieczne do tego zasoby firmy: pracownicy, miejsca, sprzęt i czas. W procesie planowania muszą być uwzględnione następujące ograniczenia:
+Głównym zadaniem agenta centralnego jest odnalezienie wśród wszystkich klientów
+i pracowników (wszystkich placówek firmy) tych, którzy związani są z więcej niż jedną placówką.
+Dla tych osób agent centralny planuje czas, biorąc pod uwagę następujące ograniczenia:
+\begin{enumerate}
+	\item{dyspozycyjność i preferencje czasowe tych osób (patrz \ref{sssec:personel} i \ref{sssec:klienci})}
+	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami
+		i dostępność pomieszczeń o~odpowiednim stałym wyposażeniu (patrz \ref{sssec:miejsca})}
+	\item{dostępność przenośnego sprzętu (patrz \ref{sssec:sprzet})}
+	\item{uprawnienia personelu (patrz \ref{sssec:personel})}
+	\item{zbiór usług przysługujących indywidualnie każdemu klientowi (patrz \ref{sssec:klienci})}
+	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
+\end{enumerate}
+
+\subsection{Definicja zadań agentów lokalnych}\label{ssec:zadaniaLokalny}
+Agenci lokalni rozpoczynają planowanie czasu dopiero po zakończeniu planowania przez
+agenta centralnego i robią to tylko dla osób związanych tylko z przypodządkowaną im placówką.
+W~procesie planowania muszą być uwzględnione następujące ograniczenia:
 \begin{enumerate}
 	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu (patrz \ref{sssec:miejsca})}
 	\item{dostępność przenośnego sprzętu (patrz \ref{sssec:sprzet})}
 	\item{uprawnienia, dyspozycyjność i preferencje personelu (patrz \ref{sssec:personel})}
-	\item{dyspozycyjność i preferencje klientów (patrz \ref{sssec:klienci})}
+	\item{zbiór usług przysługujących, dyspozycyjność
+		i preferencje klientów (patrz \ref{sssec:klienci})}
 	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
 \end{enumerate}
 
+
 \subsection{Określenie miary wyników działania}
 %Podstawowym kryterium oceny sukcesu agenta jest Dodatkowe istotne kryteria to 
-Podstawowym kryterium oceny sukcesu agenta jest zaplanowanie wszystkim klientom wszystkich przysługujących im usług w sposób umożliwiający realne wykonanie planu dysponując zadanymi zasobami (personelem, miejscem, sprzętem).
-Jeżeli nie istnieje taki plan, użytkownik powinien zostać poinformowany o przyczynie, którą może być zbyt mała liczba pracowników personelu, lub zbyt mała liczba miejsc do świadczenia usług, lub zbyt mała ilość przenośnego sprzętu.
+Podstawowym kryterium oceny sukcesu agentów jest zaplanowanie wszystkim klientom
+wszystkich przysługujących im usług w sposób umożliwiający realne wykonanie planu
+dysponując zadanymi zasobami (personelem, miejscem, sprzętem).
+Jeżeli nie istnieje taki plan, użytkownik powinien zostać poinformowany o przyczynie,
+którą może być zbyt mała liczba pracowników personelu, lub zbyt mała liczba miejsc
+do świadczenia usług, lub zbyt mała ilość przenośnego sprzętu.
 
-Dodatkowym kryterium oceny efektu pracy agenta jest jakość planu. Za idealny plan uważa się taki, który skutecznie bierze pod uwagę \emph{wszystkie} zadane przez klientów i pracowników preferencje w ramach ich dyspozycyjności,
-oraz w którym dla każdej osoby (klienta i pracownika) jednego dnia nie występują przerwy (potocznie "okienka") większe, niż to konieczne\footnote{konieczne dłuższe przerwy występują głównie w sytuacji, w której klient lub pracownik muszą przemieścić się pomiędzy oddalonymi od siebie miejscami}.
+Dodatkowym kryterium oceny efektu pracy agenta jest jakość planu. Za idealny plan
+uważa się taki, który skutecznie bierze pod uwagę \emph{wszystkie} zadane przez
+klientów i pracowników preferencje w ramach ich dyspozycyjności, oraz w którym
+dla każdej osoby (klienta i pracownika) jednego dnia nie występują przerwy
+(potocznie "{okienka}") większe, niż to konieczne\footnote{konieczne dłuższe przerwy
+występują głównie w sytuacji, w której klient lub pracownik muszą przemieścić się
+pomiędzy oddalonymi od siebie miejscami}.
 
 \subsection{Istotne składowe środowiska}
 %Projektowany typ agenta ma działać w środowisku Istotne znaczenie  dla jego funkcjonowania mają następujące aspekty środowiska:  

@@ -13,7 +13,7 @@
 \section{Cel projektu}
 Celem projektu jest opracowanie modelu systemu agentowego
 wykonującego zadanie planowania harmonogramu świadczenia usług
-z uwzględnieniem dostępności zasobów i preferencji klientów.
+z uwzględnieniem dostępności zasobów i preferencji klientów i pracowników.
 
 \section{Zakres systemu agentowego (kontekst)} \label{Zakres}
 %System swoim zasięgiem obejmuje
@@ -23,12 +23,20 @@ System harmonogramuje świadczenie usług klientom wykorzystując dostępne zaso
 	\item{sprzęt}
 	\item{personel}
 \end{itemize}
+Planowany jest okres jednego tygodnia.
+
 Użytkownikami systemu są:
 \begin{itemize}
 	\item{planista}
 	\item{personel}
 	\item{klienci}
 \end{itemize}
+Planista działa na poziomie całej firmy - wszystkich jej placówek jednocześnie.
+System agentowy podzielony jest na część (agenta) centralną i część (agentów)
+lokalną. Część centralna odpowiedzialna jest za zaplanowanie czasu wszystkim
+osobom (klientom i pracownikom), które związane są z więcej niż jedną placówką.
+Część lokalna odpowiedzialna jest za zaplanowanie czasu wszystkim pozostałym
+osobom.
 
 \include{specyfikacja_srodowiska}
 \include{wlasnosci_srodowiska}
