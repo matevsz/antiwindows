@@ -1,4 +1,24 @@
 ﻿\section{Specyfikacja środowiska zadaniowego}
+\emph{Wydaje mi się, że powinnimy rozdzielić odpowiedzialnosci dla agentów.}
+
+\emph{Agent centralny}
+\begin{enumerate}
+	\item{dyspozycyjność i preferencje czasowe tych osób}
+	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami}
+	\item{uprawnienia, dyspozycyjność i preferencje personelu}
+	\item{zbiór usług przysługujących indywidualnie każdemu klientowi
+		(albo przypisanie klienta do placówki w danym czasie)}
+	\item{szczególne wymagania planowanych usług
+		(chodzi o ramy czasowe)}
+\end{enumerate}
+
+\emph{Agent lokalny}
+\begin{enumerate}
+	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu}
+	\item{dostępność przenośnego sprzętu}
+	\item{szczególne wymagania planowanych usług}
+\end{enumerate}
+
 \subsection{Definicja zadań agenta centralnego}\label{ssec:zadaniaCentralny}
 %Do głównych zadań agenta należy: Ponadto agent ma za zadanie
 Głównym zadaniem agenta centralnego jest odnalezienie wśród wszystkich klientów
@@ -27,6 +47,25 @@ W~procesie planowania muszą być uwzględnione następujące ograniczenia:
 	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
 \end{enumerate}
 
+\emph{Uważam, że miary wyników działania agentów też są różne.
+	Agent centralny oczywicie mocno zależy od agentów lokalnych}
+
+\emph{Agent centralny}\\
+\emph{Miarą oceny jest sposób harmonowania zajęć, kursów. Ponieważ domeną agenta są zasoby ludzkie,
+	klienci, personel oraz czas potrzebny do przemieszczania się między placówkami, oceniany być powinien
+	sposób przydzialania czasu na odpowiednie czynnosci: czas trwania kursu, dojazdu między placówkami,
+	nie przydzielony czas między zajęciami(okienka). W tym ujęciu jakoć agenta proporcjonalna do czasu kursów
+	i dojazdów, i odwrotnie proporcjonalna do nie przydzielonego czasu.}
+
+\emph{Agent lokalny} \\
+\emph{Podstawowym zadaniem jest przydzielanie zasobów udostępnianych przez placówkę do realizacji kursów
+	wynikających z przypisanych klientów i personelu dydaktycznego. Biorąc pod uwagę, że odpowiedzialnosć
+	przydziału klientów i personelu jest domeną agenta centralnego, to miarą oceniającego agenta lokalnego
+	jest sposób planowania przydziału pomieszczeń oraz sprzętu. W tym ujęciu problemu wynikiem idealnym jest
+	sytuacja gdy wszystkie pomieszczenia są w pełni wykorzystane w czasie gdy kursy mogą się odbywać.
+	Wykorzystanie sprzętu jest raczej elementem który umożliwia wykorzystanie sal i w mojej ocenie nie powinien
+	być brany pod uwagę do oceny agenta. Jednakże, brak sprzętu może uniemożliwić prowadzić zajęć, przez co może
+	mieć wpływ na wykorzystanie pomieszczeń i dalej ocenę agenta.}
 
 \subsection{Określenie miary wyników działania}
 %Podstawowym kryterium oceny sukcesu agenta jest Dodatkowe istotne kryteria to 
@@ -100,6 +139,10 @@ Firma dysponuje ruchomym sprzętem, który charakteryzuje się:
 \end{itemize}
 Każdy egzemplarz (określonego typu, wliczony w ilość danego typu) może być używany w celu świadczenia jakiejś usługi każdorazowo lub jednorazowo.
 Sprzęt nie jest stałym wyposażeniem konkretnego miejsca i może być przenoszony.
+
+
+\emph{nie mam pomysłu jak to opisać (sensory i efektory), ale wydaje mi się że nasz projekt ma cechy systemu rozproszonego, w związku z tym powinno co być odnonie dostępu do internetu/LAN/WAN,
+	 dodatkowo komunikacja między klientami.}
 
 \subsection{Dostępne/potrzebne efektory}
 %Do realizacji postawionych przed agentem zadań potrzebuje on 
