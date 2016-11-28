@@ -1,23 +1,23 @@
 ﻿\section{Specyfikacja środowiska zadaniowego}
-\emph{Wydaje mi się, że powinnimy rozdzielić odpowiedzialnosci dla agentów.}
-
-\emph{Agent centralny}
-\begin{enumerate}
-	\item{dyspozycyjność i preferencje czasowe tych osób}
-	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami}
-	\item{uprawnienia, dyspozycyjność i preferencje personelu}
-	\item{zbiór usług przysługujących indywidualnie każdemu klientowi
-		(albo przypisanie klienta do placówki w danym czasie)}
-	\item{szczególne wymagania planowanych usług
-		(chodzi o ramy czasowe)}
-\end{enumerate}
-
-\emph{Agent lokalny}
-\begin{enumerate}
-	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu}
-	\item{dostępność przenośnego sprzętu}
-	\item{szczególne wymagania planowanych usług}
-\end{enumerate}
+%\emph{Wydaje mi się, że powinnimy rozdzielić odpowiedzialnosci dla agentów.}
+%
+%\emph{Agent centralny}
+%\begin{enumerate}
+%	\item{dyspozycyjność i preferencje czasowe tych osób}
+%	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami}
+%	\item{uprawnienia, dyspozycyjność i preferencje personelu}
+%	\item{zbiór usług przysługujących indywidualnie każdemu klientowi
+%		(albo przypisanie klienta do placówki w danym czasie)}
+%	\item{szczególne wymagania planowanych usług
+%		(chodzi o ramy czasowe)}
+%\end{enumerate}
+%
+%\emph{Agent lokalny}
+%\begin{enumerate}
+%	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu}
+%	\item{dostępność przenośnego sprzętu}
+%	\item{szczególne wymagania planowanych usług}
+%\end{enumerate}
 
 \subsection{Definicja zadań agenta centralnego}\label{ssec:zadaniaCentralny}
 %Do głównych zadań agenta należy: Ponadto agent ma za zadanie
@@ -26,63 +26,88 @@ i pracowników (wszystkich placówek firmy) tych, którzy związani są z więce
 Dla tych osób agent centralny planuje czas, biorąc pod uwagę następujące ograniczenia:
 \begin{enumerate}
 	\item{dyspozycyjność i preferencje czasowe tych osób (patrz \ref{sssec:personel} i \ref{sssec:klienci})}
-	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami
-		i dostępność pomieszczeń o~odpowiednim stałym wyposażeniu (patrz \ref{sssec:miejsca})}
-	\item{dostępność przenośnego sprzętu (patrz \ref{sssec:sprzet})}
+	\item{czas potrzebny na przemieszczenie się pomiędzy placówkami	(patrz \ref{sssec:miejsca})}
 	\item{uprawnienia personelu (patrz \ref{sssec:personel})}
 	\item{zbiór usług przysługujących indywidualnie każdemu klientowi (patrz \ref{sssec:klienci})}
 	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
 \end{enumerate}
+Agent centralny planując czas kojarzy ze sobą odpowiedniego klienta(-ów) i pracownika w celu
+realizacji odpowiedniej usługi i przesyła agentowi lokalnemu w odpowiedniej placówce propozycję
+takiego skojarzenia (spotkania) w celu weryfikacji. Jeżeli dane skojarzenie jest nierealizowalne,
+agent centralny oczekuje informacji o powodzie - może nim być brak wolnych pomieszczeń spełniających
+wymagania usługi lub przenośnego sprzętu - i na tej podstawie próbuje wypracować lepszą propozycję.
 
 \subsection{Definicja zadań agentów lokalnych}\label{ssec:zadaniaLokalny}
+Agenci lokalni weryfikują propozycje agenta centralnego dotyczące czasu osób (klientów
+i pracowników), które są związane z więcej niż jedną placówką (patrz \ref{ssec:zadaniaCentralny}).
+Propozycje takie zawierają w sobie skojarzenie klienta(-ów), pracownika, usługi i czasu,
+a weryfikacja polega na sprawdzeniu, czy w placówce jest w tym czasie wolne pomieszczenie i sprzęt,
+które spełniają wymagania danej usługi. Jeżeli nie, agent lokalny informuje o tym agenta centralnego,
+który próbuje wypracować lepszą propozycję.
 Agenci lokalni rozpoczynają planowanie czasu dopiero po zakończeniu planowania przez
 agenta centralnego i robią to tylko dla osób związanych tylko z przypodządkowaną im placówką.
-W~procesie planowania muszą być uwzględnione następujące ograniczenia:
+W procesie planowania muszą być uwzględnione następujące ograniczenia:
 \begin{enumerate}
+	\item{dyspozycyjność i preferencje czasowe tych osób (patrz \ref{sssec:personel} i \ref{sssec:klienci})}
+	\item{uprawnienia personelu (patrz \ref{sssec:personel})}
+	\item{zbiór usług przysługujących indywidualnie każdemu klientowi (patrz \ref{sssec:klienci})}
 	\item{dostępność pomieszczeń o odpowiednim stałym wyposażeniu (patrz \ref{sssec:miejsca})}
 	\item{dostępność przenośnego sprzętu (patrz \ref{sssec:sprzet})}
-	\item{uprawnienia, dyspozycyjność i preferencje personelu (patrz \ref{sssec:personel})}
-	\item{zbiór usług przysługujących, dyspozycyjność
-		i preferencje klientów (patrz \ref{sssec:klienci})}
 	\item{szczególne wymagania planowanych usług (patrz \ref{sssec:uslugi})}
 \end{enumerate}
 
-\emph{Uważam, że miary wyników działania agentów też są różne.
-	Agent centralny oczywicie mocno zależy od agentów lokalnych}
+%\emph{Uważam, że miary wyników działania agentów też są różne.
+%	Agent centralny oczywicie mocno zależy od agentów lokalnych}
+%
+%\emph{Agent centralny}\\
+%\emph{Miarą oceny jest sposób harmonowania zajęć, kursów. Ponieważ domeną agenta są zasoby ludzkie,
+%	klienci, personel oraz czas potrzebny do przemieszczania się między placówkami, oceniany być powinien
+%	sposób przydzialania czasu na odpowiednie czynnosci: czas trwania kursu, dojazdu między placówkami,
+%	nie przydzielony czas między zajęciami(okienka). W tym ujęciu jakoć agenta proporcjonalna do czasu kursów
+%	i dojazdów, i odwrotnie proporcjonalna do nie przydzielonego czasu.}
+%
+%\emph{Agent lokalny} \\
+%\emph{Podstawowym zadaniem jest przydzielanie zasobów udostępnianych przez placówkę do realizacji kursów
+%	wynikających z przypisanych klientów i personelu dydaktycznego. Biorąc pod uwagę, że odpowiedzialnosć
+%	przydziału klientów i personelu jest domeną agenta centralnego, to miarą oceniającego agenta lokalnego
+%	jest sposób planowania przydziału pomieszczeń oraz sprzętu. W tym ujęciu problemu wynikiem idealnym jest
+%	sytuacja gdy wszystkie pomieszczenia są w pełni wykorzystane w czasie gdy kursy mogą się odbywać.
+%	Wykorzystanie sprzętu jest raczej elementem który umożliwia wykorzystanie sal i w mojej ocenie nie powinien
+%	być brany pod uwagę do oceny agenta. Jednakże, brak sprzętu może uniemożliwić prowadzić zajęć, przez co może
+%	mieć wpływ na wykorzystanie pomieszczeń i dalej ocenę agenta.}
 
-\emph{Agent centralny}\\
-\emph{Miarą oceny jest sposób harmonowania zajęć, kursów. Ponieważ domeną agenta są zasoby ludzkie,
-	klienci, personel oraz czas potrzebny do przemieszczania się między placówkami, oceniany być powinien
-	sposób przydzialania czasu na odpowiednie czynnosci: czas trwania kursu, dojazdu między placówkami,
-	nie przydzielony czas między zajęciami(okienka). W tym ujęciu jakoć agenta proporcjonalna do czasu kursów
-	i dojazdów, i odwrotnie proporcjonalna do nie przydzielonego czasu.}
-
-\emph{Agent lokalny} \\
-\emph{Podstawowym zadaniem jest przydzielanie zasobów udostępnianych przez placówkę do realizacji kursów
-	wynikających z przypisanych klientów i personelu dydaktycznego. Biorąc pod uwagę, że odpowiedzialnosć
-	przydziału klientów i personelu jest domeną agenta centralnego, to miarą oceniającego agenta lokalnego
-	jest sposób planowania przydziału pomieszczeń oraz sprzętu. W tym ujęciu problemu wynikiem idealnym jest
-	sytuacja gdy wszystkie pomieszczenia są w pełni wykorzystane w czasie gdy kursy mogą się odbywać.
-	Wykorzystanie sprzętu jest raczej elementem który umożliwia wykorzystanie sal i w mojej ocenie nie powinien
-	być brany pod uwagę do oceny agenta. Jednakże, brak sprzętu może uniemożliwić prowadzić zajęć, przez co może
-	mieć wpływ na wykorzystanie pomieszczeń i dalej ocenę agenta.}
-
-\subsection{Określenie miary wyników działania}
+\subsection{Określenie miary wyników działania}\label{ssec:miaraWynikow}
 %Podstawowym kryterium oceny sukcesu agenta jest Dodatkowe istotne kryteria to 
-Podstawowym kryterium oceny sukcesu agentów jest zaplanowanie wszystkim klientom
+Podstawowym kryterium oceny sukcesu zespołu agentów jest zaplanowanie wszystkim klientom
 wszystkich przysługujących im usług w sposób umożliwiający realne wykonanie planu
 dysponując zadanymi zasobami (personelem, miejscem, sprzętem).
 Jeżeli nie istnieje taki plan, użytkownik powinien zostać poinformowany o przyczynie,
 którą może być zbyt mała liczba pracowników personelu, lub zbyt mała liczba miejsc
 do świadczenia usług, lub zbyt mała ilość przenośnego sprzętu.
 
-Dodatkowym kryterium oceny efektu pracy agenta jest jakość planu. Za idealny plan
-uważa się taki, który skutecznie bierze pod uwagę \emph{wszystkie} zadane przez
-klientów i pracowników preferencje w ramach ich dyspozycyjności, oraz w którym
-dla każdej osoby (klienta i pracownika) jednego dnia nie występują przerwy
-(potocznie "{okienka}") większe, niż to konieczne\footnote{konieczne dłuższe przerwy
+Dodatkowym kryterium oceny efektu pracy agentów jest jakość planu. Ponieważ wpływ agentów na plan
+jest różny w zależności od typu agenta, miary oceny również są różne i opisane w dalszej części.
+
+\subsubsection{Agent centralny}\label{sssec:miaraWynikowCentralny}
+Agent centralny planuje czas, więc ocena musi być oparta na jakości zagospodarowania czasu osób,
+za które on odpowiada. Idealne zagospodarowanie czasu to takie, które bierze pod uwagę \emph{wszystkie}
+zadane przez klientów i pracowników preferencje w ramach ich dyspozycyjności, oraz w którym nie
+występują przerwy (potocznie "{okienka}") większe, niż to konieczne\footnote{konieczne dłuższe przerwy
 występują głównie w sytuacji, w której klient lub pracownik muszą przemieścić się
-pomiędzy oddalonymi od siebie miejscami}.
+pomiędzy oddalonymi od siebie miejscami}. Każde naruszenie preferencji i wystąpienie okienek jest
+związane z uwzględnieniem w ocenie odpowiedniej kary.
+
+\subsubsection{Agenci lokalni}\label{sssec:miaraWynikowLokalny}
+Agent lokalny jest odpowiedzialny za planowanie czasu osobom, które związane są tylko z jego placówką,
+zatem efekt jego pracy jest oceniany analogicznie, jak agenta centralnego (patrz \ref{sssec:miaraWynikowCentralny}).
+Oprócz tego agent lokalny jest \emph{w całości} odpowiedzialny za gospodarowanie pomieszczeniami i sprzętem,
+które znajdują się w jego placówce, dlatego jego ocena uwzględnia również tę kwestię.
+Idealne zagospodarowanie pomieszczeń to takie, w którym wszystkie pomieszczenia są w pełni wykorzystane
+w czasie, gdy kursy mogą się odbywać.
+
+%Tu mam straszny problem z tym, jak w jasny sposób można ocenić, czy pomieszczenia są wykorzystane "w pełni"?
+%Bo to, że zajęte są WSZYSTKIE do którejś godziny jest zbytnim uproszczeniem..
+
 
 \subsection{Istotne składowe środowiska}
 %Projektowany typ agenta ma działać w środowisku Istotne znaczenie  dla jego funkcjonowania mają następujące aspekty środowiska:  
@@ -141,14 +166,21 @@ Każdy egzemplarz (określonego typu, wliczony w ilość danego typu) może być
 Sprzęt nie jest stałym wyposażeniem konkretnego miejsca i może być przenoszony.
 
 
-\emph{nie mam pomysłu jak to opisać (sensory i efektory), ale wydaje mi się że nasz projekt ma cechy systemu rozproszonego, w związku z tym powinno co być odnonie dostępu do internetu/LAN/WAN,
-	 dodatkowo komunikacja między klientami.}
+%\emph{nie mam pomysłu jak to opisać (sensory i efektory), ale wydaje mi się że nasz projekt
+%ma cechy systemu rozproszonego, w związku z tym powinno co być odnonie dostępu do internetu/LAN/WAN,
+%	 dodatkowo komunikacja między klientami.}
 
 \subsection{Dostępne/potrzebne efektory}
 %Do realizacji postawionych przed agentem zadań potrzebuje on 
-Ponieważ wynikiem działania agenta jest harmonogram, plan zagospodarowania czasu klientów, pracowników, miejsc i sprzętu, efektorem potrzebnym do prawidłowego działania jest funkcja utrwalająca wynik pracy agenta. Za najbardziej pożądany sposób utrwalenia uznaje się zapis na dysk.
+Ponieważ wynikiem działania agenta jest harmonogram, plan zagospodarowania czasu klientów,
+pracowników, miejsc i sprzętu, efektorem potrzebnym do prawidłowego działania jest funkcja
+utrwalająca wynik pracy agenta. Za najbardziej pożądany sposób utrwalenia uznaje się zapis
+na dysk - lokalny, sieciowy, baza danych.
 
 \subsection{Dostępne/potrzebne sensory}
 %Do właściwego postrzegania środowiska agent musi być wyposażony w następujące sensory: 
-Ponieważ środowisko, w jakim pracuje agent, jest czysto wirtualne, do właściwego wykonania swojego zadania potrzebuje on być w stanie odczytać warunki początkowe zadania. Na warunki początkowe zadania składają się elementy wymienione w punkcie \ref{ssec:zadania}.
+Ponieważ środowisko, w jakim pracuje agent, jest czysto wirtualne, do właściwego wykonania
+swojego zadania potrzebuje on być w stanie odczytać warunki początkowe zadania. Na warunki
+początkowe zadania składają się elementy wymienione w punkcie \ref{ssec:zadania}, które 
+przechowywane są na dysku - lokalnym, sieciowy, w bazie danych.
 
