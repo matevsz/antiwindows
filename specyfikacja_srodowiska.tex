@@ -45,7 +45,7 @@ a weryfikacja polega na sprawdzeniu, czy w placówce jest w tym czasie wolne pom
 które spełniają wymagania danej usługi. Jeżeli nie, agent lokalny informuje o tym agenta centralnego,
 który próbuje wypracować lepszą propozycję.
 Agenci lokalni rozpoczynają planowanie czasu dopiero po zakończeniu planowania przez
-agenta centralnego i robią to tylko dla osób związanych tylko z przypodządkowaną im placówką.
+agenta centralnego i robią to tylko dla osób związanych tylko z przyporządkowaną im placówką.
 W procesie planowania muszą być uwzględnione następujące ograniczenia:
 \begin{enumerate}
 	\item{dyspozycyjność i preferencje czasowe tych osób (patrz \ref{sssec:personel} i \ref{sssec:klienci})}
@@ -107,6 +107,9 @@ w czasie, gdy kursy mogą się odbywać.
 
 %Tu mam straszny problem z tym, jak w jasny sposób można ocenić, czy pomieszczenia są wykorzystane "w pełni"?
 %Bo to, że zajęte są WSZYSTKIE do którejś godziny jest zbytnim uproszczeniem..
+%TO Mateusz - Jeżeli kursów jest mniej niż  sal to nigdy nie będzie maksymalnego obłożenia, a co za tym idzie ocena nie będzie maksymalna
+%co jest błędem, bo być może agent zadziałał optymalnie. Możliwe, że taka kara może funkcjonować w momencie gdy nie można zaplanować kursu
+% z powodu braku zasobów, a dany zasób nie jest w pełni wykorzystany?
 
 
 \subsection{Istotne składowe środowiska}
