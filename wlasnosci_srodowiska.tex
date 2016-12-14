@@ -1,8 +1,29 @@
 \section{Własności środowiska zadaniowego}
 \subsection{Obserwowalność a poznawalność}
+Środowisko zadaniowe jest w pełni obserwowalne i w pełni poznawalne.Wszystkie zmienne zadania są określone w momencie
+ rozpoczęcia pracy agentów i dostępne w bazie danych w każdej chwili.
+ 
 \subsection{Przewidywalność}
+Środowisko zadaniowe jest w pełni przewidywalne - deterministyczne. Każda akcja agentów kończy się zawsze zaplanowanym
+ wynikiem, nie ma innych czynników wpływających na środowisko.
+
 \subsection{Sekwencyjność}
+Środowisko zadaniowe jest sekwencyjne. Jednorazowe zaplanowanie czasu wpływa na dostępność wszystkich czynników,
+w związku z czym każda decyzja wpływa na wszystkie następne decyzje.
+
 \subsection{Zmienność}
+Środowisko zadaniowe jest statyczne. Poza grupą agentów w środowisku nie działa żaden inny czynnik je zmieniający.
+Zadanie jest podzielone między agenta centralnego i lokalnych w taki sposób, że operują na częściach środowiska, na których
+nikt inny w tym samym czasie nie operuje.
+
 \subsection{Ciągłość}
+We wszystkich aspektach środowisko zadaniowe jest dyskretne. Żadna z wielkości nie jest ciągła. Czas analizowany jest
+z rozdzielczością minutową, a więc także jest dyskretny.
+
 \subsection{Modalność sensoryczna}
+%Nie do końca wiem, czy operowanie na środowisku w postaci bazy danych powoduje, że środowisko jest monomodalne?
+%Czy każda `tabela' powinna być traktowana jako jedno ze źródeł informacji?
+
 \subsection{Populacja agentów}
+W środowisku zadaniowym działa tylko nasza grupa agentów. Ze względu na podział na agenta centralnego i lokalnych
+jest to populacja typu gwiazda.
