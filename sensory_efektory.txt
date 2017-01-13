@@ -1,0 +1,41 @@
+Agent lokalny
+
+Sensor
+LP		Nazwa			typ			opis
+1. 		Strona kliencka		Strona http		Interfejs u¿ytkownika, dzieki temu sensorowi
+								u¿ytkownik ma mo¿liwoœæ autoryzacji i uwierzytelnienia,
+								rezerwacji nowych us³ug i zarz¹dzanie ju¿ istniej¹cych.
+
+2. 		po³¹czenie z		interface TCP/IP	Interfejs do otrzymywania informacji od agenta centralnego
+		agentem centralnym				odnoœnie informacji zwi¹zanych z agentami
+
+3		Strona serwisowa	Strona http		Interfejs administratora. Umo¿liwia serwisowanie agenta.
+
+Efektory
+LP		Nazwa			typ			opis
+1.		Strona kliencka		Strona http		Wyœwietlanie informacji o us³ugach dostêpnych w placówce,
+								informacji o zarezerwowanych us³ugach, wyœwietlanie grafików,
+								Wyœwietlanie wa¿nych informacji (np odwo³anie zajêæ)
+
+2.		po³¹czenie z		interface TCP/IP	Interfejs do wysy³ania informacji do agenta centralnego lub
+		agentem centralnym 				zapytañ odnoœnie zajêæ klienta w innych placówkach
+
+3.		Strona serwisowa	Strona http		Wyœwietlanie stanu agenta, wyœwietlanie historycznych informacji
+								stanów.
+
+Agent centralny
+
+Sensor
+LP		Nazwa			typ			opis
+1. 		po³¹czenie z		interface TCP/IP	Interfejs do otrzymywania informacji od agenta lokalnego
+		agentem lokalnym				otrzymywanie zapytañ
+
+3		Strona serwisowa	Strona http		Interfejs administratora. Umo¿liwia serwisowanie agenta.
+
+Efektory
+LP		Nazwa			typ			opis
+1.		po³¹czenie z		interface TCP/IP	Interfejs do wysy³ania informacji do agenta lokalnego lub
+		agentem lokalnym 				zapytañ odnoœnie zajêæ klienta w danej placówce
+
+3.		Strona serwisowa	Strona http		Wyœwietlanie stanu agenta, wyœwietlanie historycznych informacji
+								stanów.
