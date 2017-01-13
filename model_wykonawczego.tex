@@ -1,3 +1,93 @@
 \section{Model podsystemu wykonawczego}
-\subsection{Specyfikacja efektorów (typ, ciągłość pracy)}
-\subsection{Opis skutków działania (efekt, kod działania \(A_x\))}
+\subsection{Specyfikacja efektorów}
+
+\subsubsection{Agent centralny}
+
+\begin{tabular}{c|p{3cm}|c|p{2cm}|p{4cm}}
+LP		& Nazwa			& typ			& ciągłość pracy (częstotliwość) & opis \\
+\hline
+1		& połączenie z agentem lokalnym	& interface TCP/IP	& dyskretny (na żądanie) & Interfejs do wysyłania informacji do agenta lokalnego lub zapytań odnośnie zajęć klienta w danej placówce \\
+2		& Strona serwisowa 	& Strona http	& dyskretny (na żądanie)	& Wyświetlanie stanu agenta, wyświetlanie historycznych informacji stanów.\\
+\end{tabular}
+
+\subsubsection{Agent lokalny}
+
+\begin{tabular}{c|p{3cm}|c|p{2cm}|p{4cm}}
+LP		& Nazwa			& typ		& ciągłość pracy (częstotliwość)	& opis \\
+\hline
+1		& Strona kliencka		& Strona http	& dyskretny (na żądanie)	& Wyświetlanie informacji o usługach dostępnych w placówce, informacji o zarezerwowanych usługach, wyświetlanie grafików wyświetlanie ważnych informacji (np odwołanie zajęć)\\
+2		& połączenie z agentem centralnym		& interface TCP/IP & dyskretny (na żądanie)	& Interfejs do wysyłania informacji do agenta centralnego lub zapytań odnośnie zajęć klienta w innych placówkach \\
+3		& Strona serwisowa		& Strona http	& dyskretny (na żądanie)	& Wyświetlanie stanu agenta, wyświetlanie historycznych informacji stanów.\\
+4		& Baza danych		& interface SQL	& dyskretny (na żądanie) & Interfejs do utrwalania efektów działania agentów.
+\end{tabular}
+
+
+
+\subsection{Opis skutków działania}
+
+\subsubsection{Agent centralny}
+
+\begin{tabular}{c|p{5cm}|c}
+Nr efektora & Nazwa działania & Kod\\
+\hline
+1 & Wysłanie zapytania o listę klientów placówki & 1.01\\
+1 & Wysłanie zapytania o listę pracowników placówki & 1.02\\
+1 & Wysłanie zapytania o jeszcze niezaplanowane usługi klienta & 1.03\\
+1 & Wysłanie zapytania o dostępność klienta & 1.04\\
+1 & Wysłanie zapytania o preferencje czasowe klienta & 1.05\\
+1 & Wysłanie zapytania o dostępność pracownika & 1.06\\
+1 & Wysłanie zapytania o preferencje czasowe pracownika & 1.07\\
+1 & Wysłanie propozycji ram czasowych do świadczenia usługi klientowi przez pracownika & 1.08\\
+1 & Wysłanie zapytania o zaplanowane usługi klienta & 1.09\\
+1 & Wysłanie żądania wykreślenia zaplanowanej usługi z planu & 1.10\\
+1 & Wysłanie zapytania o zaplanowane usługi pracownika & 1.11\\
+1 & Wysłanie informacji o zakończeniu planowania dla wszystkich klientów, którzy odbierają usługi także w innych placówkach & 1.12\\
+\hline
+2 & 	 & 2.01\\
+\end{tabular}
+
+\subsubsection{Agent lokalny}
+
+\begin{tabular}{c|p{5cm}|c}
+Nr efektora & Nazwa działania & Kod\\
+\hline
+1 & Udostępnienie lub odmowa udostępnienia informacji & 1.01\\
+1 & Potwierdzenie zapisania zmiany dostępności w systemie & 1.02\\
+1 & Potwierdzenie zapisania zmiany preferencji w systemie & 1.03\\
+1 & Potwierdzenie dodania nowej usługi do zaplanowania & 1.04\\
+1 & Potwierdzenie usunięcia usługi z puli przysługujących & 1.05\\
+1 & Potwierdzenie przyjęcia jednorazowego odwołania odebrania (wykonania) usługi & 1.06\\
+\hline
+2 & Wysłanie listy klientów & 2.01\\
+2 & Wysłanie listy pracowników & 2.02\\
+2 & Wysłanie listy niezaplanowanych jeszcze usług klienta & 2.03\\
+2 & Wysłanie ram czasowych, w których klient może jeszcze pobierać usługi & 2.04\\
+2 & Wysłanie ram czasowych, w których klient woli pobierać usługi & 2.05 \\
+2 & Wysłanie ram czasowych, w których pracownik może jeszcze świadczyć usługi & 2.06 \\
+2 & Wysłanie ram czasowych, w których pracownik woli świadczyć usługi & 2.07\\
+2 & Wysłanie informacji o przyjęciu propozycji wpisu do planu & 2.08\\
+2 & Wysłanie listy zaplanowanych już danemu klientowi usług, wraz z ramami czasowymi i przypisanym pracownikiem & 2.09\\
+2 & Wysłanie informacji o spełnieniu żądania wykreślenia z planu & 2.10\\
+2 & Wysłanie listy zaplanowanych już danemu pracownikowi usług, wraz z ramami czasowymi i przypisanymi klientami & 2.11\\
+\hline
+3 & 	 & 3.01\\
+\hline
+4 & Wysłanie zapytania o klientów przypisanych do placówki & 4.01\\
+4 & Wysłanie zapytania o pracowników przypisanych do placówki & 4.02\\
+4 & Wysłanie zapytania o jeszcze niezaplanowane usługi klienta & 4.03\\
+4 & Wysłanie zapytania o dostępność klienta & 4.04\\
+4 & Wysłanie zapytania o preferencje klienta & 4.05\\
+4 & Wysłanie zapytania o dostępność pracownika & 4.06\\
+4 & Wysłanie zapytania o preferencje pracownika & 4.07\\
+4 & Wysłanie zapytania o zaplanowane usługi klienta & 4.08\\
+4 & Wysłanie zapytania o zaplanowane usługi pracownika & 4.09\\
+4 & Wysłanie zapytania o dostępność pomieszczenia & 4.10\\
+4 & Wysłanie zapytania o dostępność sprzętu & 4.11\\
+4 & Wysłanie żądania zarezerwowania określonych ram czasowych dla pomieszczenia, sprzętu, pracownika i klienta na poczet realizacji określonej usługi & 4.12\\
+4 & Wysłanie żądania wykreślenia zaplanowanej usługi z planu & 4.13\\
+4 & Wysłanie zapytania o pomieszczenia w placówce & 4.14\\
+4 & Wysłanie zapytania o sprzęt w placówce & 4.15\\
+\end{tabular}
+
+
+
