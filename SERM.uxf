@@ -632,13 +632,13 @@ klientowi</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>198</y>
-      <w>324</w>
-      <h>99</h>
+      <x>423</x>
+      <y>45</y>
+      <w>153</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;20.0;250.0;30.0;340.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;60.0;90.0;150.0;150.0;260.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -672,17 +672,6 @@ klientowi</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;210.0;70.0;220.0;220.0;220.0;340.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>252</x>
-      <y>243</y>
-      <w>324</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;20.0;340.0;40.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -785,5 +774,16 @@ w zajęciach</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>45</y>
+      <w>108</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;230.0;100.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -40,8 +40,6 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 1 & 1.09 & Zaplanowane usługi klienta & Lista usług, które już zostały zaplanowane dla danego klienta, wraz z ramami czasowymi i przypisanym pracownikiem. \\
 1 & 1.10 & Powodzenie wykreślenia & Oświadczenie ze strony agenta lokalnego, czy wysłane żądanie zostało spełnione. \\
 1 & 1.11 & Zaplanowane usługi pracownika & Lista usług, które zostały zaplanowane dla danego pracownika, wraz z ramami czasowymi i przypisanymi klientami.\\
-\hline
-2 & 2.01 & 	 &  \\
 \end{tabular}
 
 
@@ -68,9 +66,12 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 2 & 2.09 & Zapytanie o plan klienta & Agent centralny zapytuje o usługi, które zostały już danemu klientowi zaplanowane.\\
 2 & 2.10 & Żądanie wykreślenia usługi & Agent centralny żąda wykreślenia zaplanowanej już konkretnej usługi konkretnemu klientowi.\\
 2 & 2.11 & Zapytanie o plan pracownika & Agent centralny zapytuje o usługi, które zostały już danemu pracownikowi zaplanowane.\\
-2 & 2.12 & Zapobiegnięcie konfliktom klientów & Agent centralny informuje, że zaplanował wszystkie usługi wszystkim klientom, którzy odbierają usługi także w innych placówkach; agent lokalny może rozpocząć samodzielne planowanie pozostałych do zaplanowania usług w swojej placówce.\\
+\end{tabular}
+
+\begin{tabular}{c|c|p{3cm}|p{5cm}}
+Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-3 & 3.01 & 	 & \\
+2 & 2.12 & Zapobiegnięcie konfliktom klientów & Agent centralny informuje, że zaplanował wszystkie usługi wszystkim klientom, którzy odbierają usługi także w innych placówkach; agent lokalny może rozpocząć samodzielne planowanie pozostałych do zaplanowania usług w swojej placówce.\\
 \hline
 4 & 4.01 & Lista klientów & Pełna lista osób, które pobierają usługi w placówce agenta.\\
 4 & 4.02 & Lista pracowników & Pełna lista osób, które świadczą usługi w placówce agenta.\\
