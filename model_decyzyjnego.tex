@@ -6,42 +6,45 @@ Do realizacji zadań postawionych w projektowanym systemie konieczne jest przyj�
 
 \subsubsection{Agent centralny}
 
-\begin{tabular}{p{7cm}|p{7cm}}
-Warunek & Akcja\\
+\begin{tabular}{c|p{7cm}|c|p{7cm}}
+ & Warunek & & Akcja\\
 \hline
-Nie istnieje klient należący do więcej niż jednego 1.01, dla którego nie jest puste 1.03 & 1.12\\
-
-Istnieje klient należący do więcej niż jednego 1.01, dla którego nie jest puste 1.03 &
-Dla danego klienta wykonaj 1.04, 1.05,
-Wybierz z 1.02 pracownika mogącego świadczyć tę usługę i wykonaj dla niego 1.06, 1.07,
-Zaproponuj kombinowaną propozycję i wykonaj 1.08 \\
-
-Negatywne 1.08 &
-Wskaż inny czas niż ostatnio i wykonaj 1.08
-LUB wybierz z 1.02 innego niż ostatnio pracownika mogącego świadczyć tę usługę,
-Wykonaj dla niego 1.06, 1.07,
-Zaproponuj kombinowaną propozycję i wykonaj 1.08
-LUB dla dowolnego z 1.09 wykonaj 1.10 i dla uwolnionego czasu wykonaj 1.08\\
-
-
-
+IF & 1.01 & THEN & 1.01\\
+IF & 1.02 & THEN & 1.02\\
+IF & 1.03 & THEN & 1.03\\
+IF & 1.04 & THEN & 1.04\\
 \end{tabular}
 
 \subsubsection{Agent lokalny}
 
-\begin{tabular}{p{7cm}|p{7cm}}
-Warunek & Akcja\\
+\begin{tabular}{c|p{4cm}|c|p{4cm}}
+ & Warunek & & Akcja\\
 \hline
-2.12 & Rozpocznij samodzielne lokalne planowanie\\
-
-Istnieje klient należący do 4.01, dla którego nie jest puste 4.03 &
-Dla danego klienta wykonaj 4.04, 4.05,
-Wybierz z 4.02 pracownika mogącego świadczyć tę usługę i wykonaj dla niego 4.06, 4.07,
-Wybierz z 4.14 pomieszczenie, w którym można świadczyć tę usługę i wykonaj dla niego 4.10,
-Wybierz z 4.15 sprzęt, który może służyć do świadczenia tej usługi i wykonaj dla niego 4.11,
-Dla odpowiedniej kombinacji wykonaj 4.12\\
-
-
+IF & 1.01 & THEN & 1.01\\
+IF & 1.02 & THEN & 2.01\\
+IF & 1.03 & THEN & 3.01\\
+IF & 1.04 & THEN & 3.02\\
+IF & 1.05 & THEN & 3.03\\
+IF & 1.06 & THEN & 3.04\\
+IF & 1.07 & THEN & 3.05\\
+IF & 1.08 & THEN & 3.06\\
+IF & 1.09 & THEN & 3.07\\
+IF & 2.01 & THEN & 3.08\\
+IF & 2.02 & THEN & 3.09\\
+IF & 2.03 & THEN & 3.10\\
+IF & 3.01 & THEN & 1.02\\
+IF & 3.02 & THEN & 1.03\\
+IF & 3.03 & THEN & 1.04\\
+IF & 3.04 & THEN & 1.05\\
+IF & 3.05 & THEN & 1.06\\
+IF & 3.06 & THEN & 1.07\\
+IF & 3.07 & THEN & 1.08\\
+IF & 3.08 & THEN & 1.09\\
+IF & 3.09 & THEN & 1.10\\
+IF & 3.10 & THEN & 1.11\\
+IF & 3.11 & THEN & 1.12\\
+IF & 3.12 & THEN & 1.13\\
+IF & 3.13 & THEN & 1.14\\
 \end{tabular}
 
 %\subsection{Model środowiska}

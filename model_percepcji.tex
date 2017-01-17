@@ -6,7 +6,6 @@
 LP		& Nazwa			& typ			& ciągłość pracy (częstotliwość)	& opis\\
 \hline
 1 		& połączenie z agentem lokalnym		& interface TCP/IP	& dyskretny (na żądanie) & Interfejs do otrzymywania informacji i zapytań od agenta lokalnego \\
-2		& Strona serwisowa		& Strona http	& dyskretny (na żądanie) & Interfejs administratora. Umożliwia serwisowanie agenta.\\
 \end{tabular}
 
 \subsubsection{Agent lokalny}
@@ -16,8 +15,7 @@ LP		& Nazwa			& typ			& ciągłość pracy (częstotliwość) & opis \\
 \hline
 1 		& Strona kliencka		& Strona http	& dyskretny (na żądanie) & Interfejs użytkownika, dzięki temu sensorowi użytkownik ma możliwość autoryzacji i uwierzytelnienia, rezerwacji nowych usług i zarządzania już istniejącymi. \\
 2 		& połączenie z agentem centralnym		& interface TCP/IP & dyskretny (na żądanie) 	& Interfejs do otrzymywania informacji od agenta centralnego odnośnie informacji związanych z agentami. \\
-3		& Strona serwisowa 	& Strona http	& dyskretny (na żądanie) & Interfejs administratora. Umożliwia serwisowanie agenta.\\
-4		& Baza danych		& interface SQL	& dyskretny (na żądanie) & Interfejs do pozyskiwania informacji o aktualnym stanie środowiska, w szczególności o warunkach początkowych.\\
+3		& Baza danych		& interface SQL	& dyskretny (na żądanie) & Interfejs do pozyskiwania informacji o aktualnym stanie środowiska, w szczególności o warunkach początkowych.\\
 \end{tabular}
 
 
@@ -29,17 +27,16 @@ LP		& Nazwa			& typ			& ciągłość pracy (częstotliwość) & opis \\
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-1 & 1.01 & Lista klientów placówki & Pełna lista osób, które pobierają jakąkolwiek usługę w danej placówce.\\
-1 & 1.02 & Lista pracowników placówki & Pełna lista osób, które świadczą jakąkolwiek usługę w danej placówce.\\
-1 & 1.03 & Usługi klienta do zaplanowania & Lista usług, które jeszcze nie zostały zaplanowane dla danego klienta.\\
-1 & 1.04 & Dostępność klienta & Ramy czasowe, w których można jeszcze zaplanować klientowi usługi.\\
-1 & 1.05 & Preferencje klienta & Ramy czasowe, w których klient woli korzystać z usług w danej placówce.\\
-1 & 1.06 & Dostępność pracownika & Ramy czasowe, w któych można jeszcze zaplanować pracownikowi usługi.\\
-1 & 1.07 & Preferencje pracownika & Ramy czasowe, w których pracownik woli świadczyć usługi w danej placówce.\\
-1 & 1.08 & Powodzenie zaplanowania & Oświadczenie ze strony agenta lokalnego, czy wysłana propozycja została przyjęta. \\
-1 & 1.09 & Zaplanowane usługi klienta & Lista usług, które już zostały zaplanowane dla danego klienta, wraz z ramami czasowymi i przypisanym pracownikiem. \\
-1 & 1.10 & Powodzenie wykreślenia & Oświadczenie ze strony agenta lokalnego, czy wysłane żądanie zostało spełnione. \\
-1 & 1.11 & Zaplanowane usługi pracownika & Lista usług, które zostały zaplanowane dla danego pracownika, wraz z ramami czasowymi i przypisanymi klientami.\\
+1 & 1.01 & Czy klient unikalny & Zapytanie od agenta lokalnego czy wskazany klient jest unikatowy.\\
+1 & 1.02 & Unikalny klient & Na zapytanie do agentów lokalnych czy posiadają wskazanego klienta jako aktywnego usługobiorcę odpowiedział tylko jeden klient.\\
+1 & 1.03 & Nie unikalny klient & Na zapytanie do agentów lokalnych czy posiadają wskazanego klienta jako aktywnego usługobiorcę odpowiedziało przynajmniej dwóch klient.\\
+1 & 1.04 & Informacje o kliencie & Otrzymane informacje o kliencie, jego przeferencjach i dostępnosci, a także o usługach jakie mają być zaplanowane i ich dostępnosci.\\
+\end{tabular}
+
+\begin{tabular}{c|c|p{3cm}|p{5cm}}
+Nr sensora & Kod postrzeżenia & Nazwa & opis\\
+\hline
+
 \end{tabular}
 
 
@@ -48,45 +45,48 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-1 & 1.01 & Próba logowania & Klient lub pracownik żąda dostępu do informacji, które znajdują się w systemie.\\
-1 & 1.02 & Zmiana dostępności & Klient (lub pracownik) zmienia ramy czasowe, w których może odbierać (lub świadczyć) usługi.\\
-1 & 1.03 & Zmiana preferencji & Klient (lub pracownik) zmienia ramy czasowe, w których woli odbierać (lub świadczyć) usługi.\\
-1 & 1.04 & Wybór usługi & Klient dodaje konkretną usługę do puli przysługujących mu usług.\\
-1 & 1.05 & Rezygnacja z usługi & Klient rezygnuje z pobierania konkretnej usługi.\\
-1 & 1.06 & Odwołanie usługi & Klient (lub pracownik) odwołuje jednorazowo zaplanowane odebranie (wykonanie) usługi.\\
-\hline
-2 & 2.01 & Zapytanie o listę klientów & Agent centralny zapytuje o pełną listę klientów pobierających jakąkolwiek usugę.\\
-2 & 2.02 & Zapytanie o listę pracowników & Agent centralny zapytuje o pełną listę pracowników, którzy świadczą jakąkolwiek usługę.\\
-2 & 2.03 & Zapytanie o niezaplanowane usługi klienta & Agent centralny zapytuje o listę usług, które trzeba jeszcze zaplanować danemu klientowi w danej placówce.\\
-2 & 2.04 & Zapytanie o dostępność klienta & Agent centralny zapytuje o ramy czasowe, w jakich klient może jeszcze pobierać usługi. \\
-2 & 2.05 & Zapytanie o preferencje klienta & Agent centralny zapytuje o ramy czasowe, w jakich klient woli korzystać z usług. \\
-2 & 2.06 & Zapytanie o dostępność pracownika & Agent centralny zapytuje o ramy czasowe, w jakich pracownik może jeszcze świadczyć usługi. \\
-2 & 2.07 & Zapytanie o preferencje pracownika & Agent centralny zapytuje o ramy czasowe, w jakich pracownik woli świadczyć usługi. \\
-2 & 2.08 & Propozycja zaplanowania usługi & Agent centralny proponuje ramy czasowe, w których konkretny pracownik miałby świadczyć konkretną usługę konkretnemu klientowi.\\
-2 & 2.09 & Zapytanie o plan klienta & Agent centralny zapytuje o usługi, które zostały już danemu klientowi zaplanowane.\\
-2 & 2.10 & Żądanie wykreślenia usługi & Agent centralny żąda wykreślenia zaplanowanej już konkretnej usługi konkretnemu klientowi.\\
-2 & 2.11 & Zapytanie o plan pracownika & Agent centralny zapytuje o usługi, które zostały już danemu pracownikowi zaplanowane.\\
+1 & 1.01 & Podano login i hasło & Próba autoryzaji i uwierzytelnienia do systemu.\\
+1 & 1.02 & Dodaj nowego użytkownika & Próba dodania nowego użytwkownika.\\
+1 & 1.03 & Dodanie usługi & Próba dodania usługi dla klienta.\\
+1 & 1.04 & Usunięcie usługi & Próba usunięcia usługi klientowi.\\
+1 & 1.05 & Dodanie preferencji czasowej & Próba dodania preferencji czasowej użytkownikowi.\\
+1 & 1.06 & Usunięcie preferencji czasowej & Próba usunięcia preferencji czasowej użytkownikowi.\\
+1 & 1.07 & Dodanie dostępnoci & Próba dodania ram czasowych w których użytkownik będzie dostępny.\\
+1 & 1.08 & Usunięcie dostępnoci & Próba usunięcia ram czasowych w których użytkownik był dostępny.\\
 \end{tabular}
 
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-2 & 2.12 & Zapobiegnięcie konfliktom klientów & Agent centralny informuje, że zaplanował wszystkie usługi wszystkim klientom, którzy odbierają usługi także w innych placówkach; agent lokalny może rozpocząć samodzielne planowanie pozostałych do zaplanowania usług w swojej placówce.\\
-\hline
-4 & 4.01 & Lista klientów & Pełna lista osób, które pobierają usługi w placówce agenta.\\
-4 & 4.02 & Lista pracowników & Pełna lista osób, które świadczą usługi w placówce agenta.\\
-4 & 4.03 & Lista usług do zaplanowania klientowi & Lista usług, które nie zostały jeszcze zaplanowane konkretnemu klientowi.\\
-4 & 4.04 & Dostępność klienta & Ramy czasowe, w których dany klient może jeszcze odbierać usługi.\\
-4 & 4.05 & Preferencje klienta & Ramy czasowe, w których dany klient woli odbierać usługi.\\
-4 & 4.06 & Dostępność pracownika & Ramy czasowe, w których dany pracownik może jeszcze świadczyć usługi.\\
-4 & 4.07 & Preferencje pracownika & Ramy czasowe, w których dany pracownik woli świadczyć usługi.\\
-4 & 4.08 & Plan klienta & Lista usług, które zostały już zaplanowane klientowi, wraz z ich ramami czasowymi i przypisanym pracownikiem, pomieszczeniem i sprzętem.\\
-4 & 4.09 & Plan pracownika & Lista usług, które zostały już zaplanowane pracownikowi, wraz z ich ramami czasowymi i przypisanymi klientami, pomieszczeniem i sprzętem.\\
-4 & 4.10 & Dostępność pomieszczenia & Ramy czasowe, w których w danym pomieszczeniu można jeszcze zaplanować świadczenie usług.\\
-4 & 4.11 & Dostępność sprzętu & Ramy czasowe, w których można jeszcze zaplanować używanie danego sprzętu.\\
-4 & 4.12 & Powodzenie zaplanowania & Informacja z bazy danych, że dodanie odpowiednich wpisów zakończyło się sukcesem lub niepowodzeniem.\\
-4 & 4.13 & Powodzenie wykreślenia & Informacja z bazy danych, że usunięcie odpowiednich wpisów zakończyło się sukcesem lub niepowodzeniem.\\
-4 & 4.14 & Lista pomieszczeń & Pełna lista pomieszczeń (wraz z ich cechami), które są dostępne w placówce agenta.\\
-4 & 4.15 & Lista sprzętu & Pełna lista sprzętu (wraz z jego cechami), które są do dyspozycji w placówce agenta.\\
+2 & 2.01 & Czy posiadasz klienta & Zapytanie od agenta centralnego czy wskazanemu klientowi wiadczone są usługi.\\
+2 & 2.02 & Podaj informacje o kliencie & Prosba o wysłanie wszystkich informacji o kliencie oraz usługach które są wiadczone lub mają być swiadczone.\\
+2 & 2.03 & Czekaj, planuje twojego klienta & Informacja od agenta centralnego o trwającym planowaniu klienta.\\
+2 & 2.04 & Zaplanuj klienta sam & informacja od agenta centralnego, że tylko dana placówka ma wskazanego klienta i może zaplanować jego plan sama.\\
+2 & 2.05 & Nowy plan klienta & Nowy plan wskazanego klienta.\\
 \end{tabular}
 
+\begin{tabular}{c|c|p{3cm}|p{5cm}}
+Nr sensora & Kod postrzeżenia & Nazwa & opis\\
+\hline
+3 & 3.01 & Użytkownik istnieje i jest personelem & Potwierdzenie od bazy danych że istnieje użytkownik, jest pracownikiem i hasło jest prawidłowe.\\
+3 & 3.02 & Użytkownik istnieje i jest klientem & Potwierdzenie od bazy danych że istnieje użytkownik,jest klientem i hasło jest prawidłowe.\\
+3 & 3.03 & Użytkownik nie istnieje & Informacja o tym że dany użytkownik nie istnieje lub jego hasło jest nie poprawne.\\
+3 & 3.04 & Potwierdzenie usunięcia usługi & Usunięcie usługi użytkownikowi zakończone powodzeniem.\\
+3 & 3.05 & Błąd usunięcia usługi & Usunięcie usługi użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.06 & Potwierdzenie  dodania usługi &  Dodanie usługi dla użytkownikowi zakończone powodzeniem.\\
+3 & 3.07 & Błąd  dodania usługi &  Dodanie usługi dla użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.08 & Potwierdzenie  dodania preferencji &  Dodanie preferencji czasowej dla użytkownikowi zakończone powodzeniem.\\
+3 & 3.07 & Błąd  dodania preferencji &  Dodanie preferencji czasowej dla użytkownikowi zakończone niepowodzeniem.\\
+\end{tabular}
+
+\begin{tabular}{c|c|p{3cm}|p{5cm}}
+Nr sensora & Kod postrzeżenia & Nazwa & opis\\
+\hline
+3 & 3.09 & Potwierdzenie  usunięcia preferencji &  Usunięcie preferencji czasowej użytkownikowi zakończone powodzeniem.\\
+3 & 3.10 & Błąd usunięcia preferencji &  Usunięcie preferencji czasowej użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.11 & Potwierdzenie dodania dyspozycyjnosci &  Dodanie dyspozycyjnosci dla użytkownikowi zakończone powodzeniem.\\
+3 & 3.12 & Błąd dodania dyspozycyjnosci &  Dodanie preferencji czasowej dla użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.11 & Potwierdzenie usunięcia dyspozycyjnosci &  Usunięcie dyspozycyjnosci użytkownika zakończone powodzeniem.\\
+3 & 3.12 & Błąd błąd dyspozycyjnosci &  Usunięcie dostępnosci użytkownika zakończone niepowodzeniem.\\
+3 & 3.13 & Dodanie użytkownika & Dodanie użytkownika do bazy danych zakończone powodzeniem.\\
+3 & 3.14 & Nie dodanie użytkownika & Wskazany użytkownik już istnieje i nie może zostać dodany do bazy danych.\\
