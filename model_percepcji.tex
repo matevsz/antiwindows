@@ -29,24 +29,17 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
 1 & 1.01 & Czy klient unikalny & Zapytanie od agenta lokalnego czy wskazany klient jest unikatowy.\\
 1 & 1.02 & Unikalny klient & Na zapytanie do agentów lokalnych czy posiadają wskazanego klienta jako aktywnego usługobiorcę odpowiedział tylko jeden klient.\\
-1 & 1.03 & Nie unikalny klient & Na zapytanie do agentów lokalnych czy posiadają wskazanego klienta jako aktywnego usługobiorcę odpowiedziało przynajmniej dwóch klient.\\
-1 & 1.04 & Informacje o kliencie & Otrzymane informacje o kliencie, jego przeferencjach i dostępnosci, a także o usługach jakie mają być zaplanowane i ich dostępnosci.\\
+1 & 1.03 & Nie unikalny klient & Na zapytanie do agentów lokalnych czy posiadają wskazanego klienta jako aktywnego usługobiorcę twierdząco odpowiedziało przynajmniej dwóch agentów lokalnych.\\
+1 & 1.04 & Informacje o kliencie & Otrzymane informacje o kliencie, jego preferencjach i dostępnosci, a także o usługach jakie mają być zaplanowane i ich dostępnosci.\\
 \end{tabular}
-
-\begin{tabular}{c|c|p{3cm}|p{5cm}}
-Nr sensora & Kod postrzeżenia & Nazwa & opis\\
-\hline
-
-\end{tabular}
-
 
 \subsubsection{Agent lokalny}
 
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-1 & 1.01 & Podano login i hasło & Próba autoryzaji i uwierzytelnienia do systemu.\\
-1 & 1.02 & Dodaj nowego użytkownika & Próba dodania nowego użytwkownika.\\
+1 & 1.01 & Podano login i hasło & Próba autoryzacji i uwierzytelnienia do systemu.\\
+1 & 1.02 & Dodaj nowego użytkownika & Próba dodania nowego użytkownika.\\
 1 & 1.03 & Dodanie usługi & Próba dodania usługi dla klienta.\\
 1 & 1.04 & Usunięcie usługi & Próba usunięcia usługi klientowi.\\
 1 & 1.05 & Dodanie preferencji czasowej & Próba dodania preferencji czasowej użytkownikowi.\\
@@ -58,8 +51,8 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-2 & 2.01 & Czy posiadasz klienta & Zapytanie od agenta centralnego czy wskazanemu klientowi wiadczone są usługi.\\
-2 & 2.02 & Podaj informacje o kliencie & Prosba o wysłanie wszystkich informacji o kliencie oraz usługach które są wiadczone lub mają być swiadczone.\\
+2 & 2.01 & Czy posiadasz klienta & Zapytanie od agenta centralnego czy wskazanemu klientowi świadczone są usługi.\\
+2 & 2.02 & Podaj informacje o kliencie & Prośba o wysłanie wszystkich informacji o kliencie oraz usługach które są świadczone lub mają być świadczone.\\
 2 & 2.03 & Czekaj, planuje twojego klienta & Informacja od agenta centralnego o trwającym planowaniu klienta.\\
 2 & 2.04 & Zaplanuj klienta sam & informacja od agenta centralnego, że tylko dana placówka ma wskazanego klienta i może zaplanować jego plan sama.\\
 2 & 2.05 & Nowy plan klienta & Nowy plan wskazanego klienta.\\
@@ -68,15 +61,15 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
 Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
-3 & 3.01 & Użytkownik istnieje i jest personelem & Potwierdzenie od bazy danych że istnieje użytkownik, jest pracownikiem i hasło jest prawidłowe.\\
-3 & 3.02 & Użytkownik istnieje i jest klientem & Potwierdzenie od bazy danych że istnieje użytkownik,jest klientem i hasło jest prawidłowe.\\
-3 & 3.03 & Użytkownik nie istnieje & Informacja o tym że dany użytkownik nie istnieje lub jego hasło jest nie poprawne.\\
+3 & 3.01 & Użytkownik istnieje i jest personelem & Potwierdzenie od bazy danych, że istnieje użytkownik, jest pracownikiem i hasło jest prawidłowe.\\
+3 & 3.02 & Użytkownik istnieje i jest klientem & Potwierdzenie od bazy danych, że istnieje użytkownik, jest klientem i hasło jest prawidłowe.\\
+3 & 3.03 & Użytkownik nie istnieje & Informacja o tym, że dany użytkownik nie istnieje lub jego hasło jest niepoprawne.\\
 3 & 3.04 & Potwierdzenie usunięcia usługi & Usunięcie usługi użytkownikowi zakończone powodzeniem.\\
 3 & 3.05 & Błąd usunięcia usługi & Usunięcie usługi użytkownikowi zakończone niepowodzeniem.\\
-3 & 3.06 & Potwierdzenie  dodania usługi &  Dodanie usługi dla użytkownikowi zakończone powodzeniem.\\
-3 & 3.07 & Błąd  dodania usługi &  Dodanie usługi dla użytkownikowi zakończone niepowodzeniem.\\
-3 & 3.08 & Potwierdzenie  dodania preferencji &  Dodanie preferencji czasowej dla użytkownikowi zakończone powodzeniem.\\
-3 & 3.07 & Błąd  dodania preferencji &  Dodanie preferencji czasowej dla użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.06 & Potwierdzenie  dodania usługi &  Dodanie usługi dla użytkownika zakończone powodzeniem.\\
+3 & 3.07 & Błąd  dodania usługi &  Dodanie usługi dla użytkownika zakończone niepowodzeniem.\\
+3 & 3.08 & Potwierdzenie  dodania preferencji &  Dodanie preferencji czasowej dla użytkownika zakończone powodzeniem.\\
+3 & 3.07 & Błąd  dodania preferencji &  Dodanie preferencji czasowej dla użytkownika zakończone niepowodzeniem.\\
 \end{tabular}
 
 \begin{tabular}{c|c|p{3cm}|p{5cm}}
@@ -84,9 +77,10 @@ Nr sensora & Kod postrzeżenia & Nazwa & opis\\
 \hline
 3 & 3.09 & Potwierdzenie  usunięcia preferencji &  Usunięcie preferencji czasowej użytkownikowi zakończone powodzeniem.\\
 3 & 3.10 & Błąd usunięcia preferencji &  Usunięcie preferencji czasowej użytkownikowi zakończone niepowodzeniem.\\
-3 & 3.11 & Potwierdzenie dodania dyspozycyjnosci &  Dodanie dyspozycyjnosci dla użytkownikowi zakończone powodzeniem.\\
-3 & 3.12 & Błąd dodania dyspozycyjnosci &  Dodanie preferencji czasowej dla użytkownikowi zakończone niepowodzeniem.\\
+3 & 3.11 & Potwierdzenie dodania dyspozycyjnosci &  Dodanie dyspozycyjnosci użytkownikowi zakończone powodzeniem.\\
+3 & 3.12 & Błąd dodania dyspozycyjnosci &  Dodanie preferencji czasowej użytkownikowi zakończone niepowodzeniem.\\
 3 & 3.11 & Potwierdzenie usunięcia dyspozycyjnosci &  Usunięcie dyspozycyjnosci użytkownika zakończone powodzeniem.\\
 3 & 3.12 & Błąd błąd dyspozycyjnosci &  Usunięcie dostępnosci użytkownika zakończone niepowodzeniem.\\
 3 & 3.13 & Dodanie użytkownika & Dodanie użytkownika do bazy danych zakończone powodzeniem.\\
 3 & 3.14 & Nie dodanie użytkownika & Wskazany użytkownik już istnieje i nie może zostać dodany do bazy danych.\\
+\end{tabular}

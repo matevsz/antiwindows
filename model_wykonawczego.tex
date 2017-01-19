@@ -14,7 +14,7 @@ LP		& Nazwa			& typ			& ciągłość pracy (częstotliwość) & opis \\
 \begin{tabular}{c|p{3cm}|c|p{2cm}|p{4cm}}
 LP		& Nazwa			& typ		& ciągłość pracy (częstotliwość)	& opis \\
 \hline
-1		& Strona kliencka		& Strona http	& dyskretny (na żądanie)	& Wyświetlanie informacji o usługach dostępnych w placówce, informacji o zarezerwowanych usługach, wyświetlanie grafików wyświetlanie ważnych informacji (np odwołanie zajęć)\\
+1		& Strona kliencka		& Strona http	& dyskretny (na żądanie)	& Wyświetlanie informacji o usługach dostępnych w placówce, informacji o zarezerwowanych usługach, wyświetlanie grafików wyświetlanie ważnych informacji (np. odwołanie zajęć)\\
 2		& połączenie z agentem centralnym		& interface TCP/IP & dyskretny (na żądanie)	& Interfejs do wysyłania informacji do agenta centralnego lub zapytań odnośnie zajęć klienta w innych placówkach \\
 3		& Baza danych		& interface SQL	& dyskretny (na żądanie) & Interfejs do utrwalania efektów działania agentów.
 \end{tabular}
@@ -28,7 +28,7 @@ LP		& Nazwa			& typ		& ciągłość pracy (częstotliwość)	& opis \\
 \begin{tabular}{c|p{5cm}|c}
 Nr efektora & Nazwa działania & Kod\\
 \hline
-1 & Rozesłanie do agentów lokalnych czy mają jako użytkownika wskazanego klienta & 1.01\\
+1 & Rozesłanie do agentów lokalnych zapytania czy mają jako użytkownika wskazanego klienta & 1.01\\
 1 & Odesłanie do klienta lokalnego informacji, że wskazany klient jest unikalny & 1.02\\
 1 & Wysłanie do agentów lokalnych rządania podania informacji o kliencie & 1.03\\
 1 & Zaplanowanie i wysłanie nowego planu klienta & 1.04\\
@@ -39,22 +39,22 @@ Nr efektora & Nazwa działania & Kod\\
 \begin{tabular}{c|p{5cm}|c}
 Nr efektora & Nazwa działania & Kod\\
 \hline
-1 & Wysłanie strony do autoryzacji iuwierzytelnienia & 1.01\\
-1 & Wyswietl stronę użytkownika personel & 1.02\\
-1 & Wyswietl stronę użytkownika klient & 1.03\\
-1 & Wyswietl stronę z błędem autoryzacji & 1.04\\
-1 & Wyswietl informację o usunięciu usługi & 1.05\\
-1 & Wyswietl informację o nie usunięciu usługi & 1.06\\
-1 & Wyswietl informację o dodaniu usługi & 1.07\\
-1 & Wyswietl informację o nie dodaniu usługi & 1.08\\
-1 & Wyswietl informację o dodaniu preferencji czasowych & 1.09\\
-1 & Wyswietl informację o nie dodaniu preferencji czasowych & 1.10\\
-1 & Wyswietl informację o dodaniu dostępnosci użytkownika & 1.11\\
-1 & Wyswietl informację o nie dodaniu dostępnosci użytkownika & 1.12\\
-1 & Potwierdzenie dodania użytkownika i wyswietlenie strony logowania & 1.13\\
+1 & Wysłanie strony do autoryzacji i uwierzytelnienia & 1.01\\
+1 & Wyświetl stronę użytkownika personel & 1.02\\
+1 & Wyświetl stronę użytkownika klient & 1.03\\
+1 & Wyświetl stronę z błędem autoryzacji & 1.04\\
+1 & Wyświetl informację o usunięciu usługi & 1.05\\
+1 & Wyświetl informację o nie usunięciu usługi & 1.06\\
+1 & Wyświetl informację o dodaniu usługi & 1.07\\
+1 & Wyświetl informację o nie dodaniu usługi & 1.08\\
+1 & Wyświetl informację o dodaniu preferencji czasowych & 1.09\\
+1 & Wyświetl informację o nie dodaniu preferencji czasowych & 1.10\\
+1 & Wyświetl informację o dodaniu dostępnosci użytkownika & 1.11\\
+1 & Wyświetl informację o nie dodaniu dostępnosci użytkownika & 1.12\\
+1 & Potwierdzenie dodania użytkownika i wyświetlenie strony logowania & 1.13\\
 \hline
 2 & Wysłanie informacji do agenta centralnego czy wskazany klient jest unikalny & 2.01\\
-2 & Wysłanie pełnej informacji o kliencie, oraz usług zaplanowanych i nie zaplanowanych z poptrzebnymi informacjami & 2.02\\
+2 & Wysłanie pełnej informacji o kliencie, oraz usług zaplanowanych i nie zaplanowanych z potrzebnymi informacjami & 2.02\\
 \end{tabular}
 
 \begin{tabular}{c|p{5cm}|c}
@@ -63,11 +63,11 @@ Nr efektora & Nazwa działania & Kod\\
 3 & Usunięcie usługi z bazy & 3.01\\
 3 & Dodaj preferencje czasowe użytkownika & 3.02\\
 3 & Usuń preferencje czasowe użytkownika & 3.03\\
-3 & Dodaj dostępnosć użytkownika & 3.04\\
-3 & Usuń dostępnosć użytkownika & 3.05\\
-3 & Sprawdź czy dany użytkownik istnieje & 3.06\\
+3 & Dodaj dostępność użytkownika & 3.04\\
+3 & Usuń dostępność użytkownika & 3.05\\
+3 & Sprawdź, czy dany użytkownik istnieje & 3.06\\
 3 & Dodaj nowego użytkownika do bazy & 3.07\\
-3 & Sprawdź czy dany użytkownik jest aktywny (swiadczy lub korzysta z usług) & 3.08\\
+3 & Sprawdź, czy dany użytkownik jest aktywny (świadczy lub korzysta z usług) & 3.08\\
 3 & Samodzielne planowanie i zapis danych w bazie & 3.09\\
 3 & Usunięcie zajęć użytkownika i zapisanie nowych & 3.10\\
 \end{tabular}
